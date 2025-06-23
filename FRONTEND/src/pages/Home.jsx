@@ -1,0 +1,22 @@
+import NatureVid from '../assets/video/flight_vid.mp4'
+import Hero from '../components/Hero/Hero'
+
+const Home = () => {
+    return (
+        <>
+            <div className="h-[700px] relative">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    className="absolute right-0 top-0 h-[700px] w-full object-cover z-[-1]"
+                >
+                    <source src={NatureVid} type="video/mp4" />
+                    <Hero />
+                </video>
+            </div>
+        </>
+    )
+}
+
+export default Home
