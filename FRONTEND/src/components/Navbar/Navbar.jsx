@@ -88,7 +88,7 @@ const Navbar = ({ userdata, setUserdata, handleOrderPopup }) => {
                             <ul className="flex items-center gap-6 ">
                                 {NavbarLinks.map((link) => (
                                     <li key={link.name} className="py-4">
-                                        <NavLink to={link.link} activeClassName="active">
+                                        <NavLink to={link.link} activeclassname="active">
                                             {link.name}
                                         </NavLink>
                                     </li>
@@ -128,7 +128,7 @@ const Navbar = ({ userdata, setUserdata, handleOrderPopup }) => {
                                     <button onClick={handleLogout}>Logout</button>
                                 ) : (
 
-                                    <NavLink to="/login" activeClassName="active">
+                                    <NavLink to="/login" activeclassname="active">
                                         Login/Signup
                                     </NavLink>
 

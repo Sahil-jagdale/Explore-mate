@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import Modal from 'react-model';
+import Modal from 'react-modal';
 
 const cities = [
     {
@@ -61,7 +61,7 @@ const cities = [
     {
         city: "Bengaluru",
         airport_name: "Bengaluru International Airport",
-        iata_code: "BLR",
+        iata_code: "BLR2"
     },
     {
         city: "Srinagar",
@@ -71,7 +71,7 @@ const cities = [
     {
         city: "Ahmedabad",
         airport_name: "Ahmedabad International Airport",
-        iata_code: "AMD",
+        iata_code: "AMD2"
     },
     {
         city: "Kozhikode (Calicut)",
@@ -121,7 +121,7 @@ const cities = [
     {
         city: "Thiruvananthapuram",
         airport_name: "Thiruvananthapuram International Airport",
-        iata_code: "TRV",
+        iata_code: "TRV2"
     },
     {
         city: "Nagpur",
