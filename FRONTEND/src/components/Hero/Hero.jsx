@@ -266,7 +266,7 @@ const Hero = () => {
                             </div>
                             <button
                                 onClick={handleSubmit}
-                                className="bg-gradient-to-r from-primary to-secondary text-white hover:scale-105 px-4 py-2 rounded-full duration-200 absolute -bottom-5 left-1/2 -translate-x-1/2"
+                                className="bg-gradient-to-r from-cyan-500 to-teal-400 text-white hover:scale-105 px-4 py-2 rounded-full duration-200  -bottom-5 left-1/2 -translate-x-1/2 absolute"
                             >
                                 Search Now
                             </button>

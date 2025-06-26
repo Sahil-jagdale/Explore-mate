@@ -19,10 +19,6 @@ export const NavbarLinks = [
         name: "FlightFare",
         link: "/flight",
     },
-    {
-        name: "Itinerary",
-        link: "/itinerary",
-    },
 ];
 
 const DropdownLinks = [

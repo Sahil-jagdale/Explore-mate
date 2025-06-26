@@ -7,11 +7,27 @@ import TripPlanner from './pages/TripPlanner';
 import FlightComparison from './pages/FlightComparison';
 import { Register } from './pages/Register';
 import Home from './pages/Home';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect, useState } from 'react';
+
 const App = () => {
+  const [userdata, setUserdata] = useState(null);
+
+  useEffect(() => {
+    AOS.init({
+      offset: 100,
+      duration: 900,
+      easing: 'ease-in-sine',
+      delay: 100,
+    });
+    AOS.refresh();
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes >
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout userdata={userdata} setUserdata={setUserdata} />}>
           <Route index element={<Home />}></Route>
           <Route path="about" element={<About />}></Route>
           <Route path="blogs" element={<Blogs />}></Route>
@@ -22,7 +38,7 @@ const App = () => {
 
         </Route>
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter >
   )
 }
 
