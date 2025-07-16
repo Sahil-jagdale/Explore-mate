@@ -1023,7 +1023,7 @@ const Airport = [
 
 app.use(express.json());
 app.use(cors({
-    origin: "https://explore-mate-livid.vercel.app/",
+    origin: "https://explore-mate-eta.vercel.app/",
     credentials: true,
   }));
 
