@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import Modal from 'react-modal';
+Modal.setAppElement('#root');
 
 const cities = [
     {
@@ -274,21 +275,21 @@ const Hero = () => {
                         </div>
                     </div>
                 </div>
-                <Modal>
+                <Modal
                     isOpen={modalIsOpen}
                     onRequestClose={() => setModalIsOpen(false)}
                     contentLabel="Flight Details Modal"
                     style={{
                         content: {
-                            width: "80%", // Adjust the width as needed
-                            height: "80%", // Adjust the height as needed
+                            width: "80%",
+                            height: "80%",
                             margin: "50px auto auto auto",
-                            borderRadius: "10px", // Apply border radius
-                            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Apply box shadow
-                            overflow: "auto", // Allow content scrolling if needed
+                            borderRadius: "10px",
+                            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                            overflow: "auto",
                         },
                     }}
-
+                >
                     <div className="flex justify-end">
                         <button
                             className="text-gray-500 hover:text-gray-800 focus:outline-none pr-10"
@@ -304,9 +305,9 @@ const Hero = () => {
                                 <path
                                     d="M5 5L19 19M5 19L19 5"
                                     stroke="#000000"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
                                 />
                             </svg>
                         </button>
@@ -314,34 +315,17 @@ const Hero = () => {
                     <h2 className="text-xl font-semibold mb-4">Flight Details</h2>
                     {responseData && responseData.length > 0 ? (
                         <>
-
                             {responseData.map((flight, index) => (
                                 <div
                                     key={index}
                                     className="bg-gray-100 p-4 rounded-md shadow-md mb-4"
                                 >
                                     <p className="text-lg font-semibold mb-2">Flight {index + 1}</p>
-                                    <p>
-                                        <span className="font-semibold">Departure Airport:</span>{" "}
-                                        {flight["Departure Airport"]}
-                                    </p>
-                                    <p>
-                                        <span className="font-semibold">Departure Time:</span>{" "}
-                                        {flight["Departure Time"]}
-                                    </p>
-                                    <p>
-                                        <span className="font-semibold">Arrival Airport:</span>{" "}
-                                        {flight["Arrival Airport"]}
-                                    </p>
-                                    <p>
-                                        <span className="font-semibold">Arrival Time:</span>{" "}
-                                        {flight["Arrival Time"]}
-                                    </p>
-                                    <p>
-                                        <span className="font-semibold">Duration (minutes):</span>{" "}
-                                        {flight["Duration (minutes)"]}
-                                    </p>
-
+                                    <p><span className="font-semibold">Departure Airport:</span> {flight["Departure Airport"]}</p>
+                                    <p><span className="font-semibold">Departure Time:</span> {flight["Departure Time"]}</p>
+                                    <p><span className="font-semibold">Arrival Airport:</span> {flight["Arrival Airport"]}</p>
+                                    <p><span className="font-semibold">Arrival Time:</span> {flight["Arrival Time"]}</p>
+                                    <p><span className="font-semibold">Duration (minutes):</span> {flight["Duration (minutes)"]}</p>
                                 </div>
                             ))}
                         </>
@@ -353,9 +337,22 @@ const Hero = () => {
                         </div>
                     )}
                 </Modal>
+
             </div>
         </>
     )
 }
 
 export default Hero;
+
+
+
+
+
+
+
+
+
+
+
+

@@ -62,7 +62,7 @@ const cities = [
     {
         city: "Bengaluru",
         airport_name: "Bengaluru International Airport",
-        iata_code: "BLR",
+        iata_code: "BLR1",
     },
     {
         city: "Srinagar",
@@ -72,7 +72,7 @@ const cities = [
     {
         city: "Ahmedabad",
         airport_name: "Ahmedabad International Airport",
-        iata_code: "AMD",
+        iata_code: "AMD1",
     },
     {
         city: "Kozhikode (Calicut)",
@@ -87,7 +87,7 @@ const cities = [
     {
         city: "Thiruvananthapuram",
         airport_name: "Trivandrum International Airport",
-        iata_code: "TRV",
+        iata_code: "TRV1",
     },
     {
         city: "Lucknow",
@@ -163,7 +163,7 @@ const FlightComparison = () => {
             };
 
             const response = await axios.post(
-                `https://exploremate-pythoncode.onrender.com/flights`,
+                `http://localhost:5001/flight-details`,
                 data,
                 {
                     headers: {

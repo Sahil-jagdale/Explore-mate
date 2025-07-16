@@ -6,7 +6,7 @@ from fn1 import recommend_attractions, recommend_hotels, recommend_restaurants
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app) 
+CORS(app)
 
 # Define routes for different recommendations
 @app.route('/')

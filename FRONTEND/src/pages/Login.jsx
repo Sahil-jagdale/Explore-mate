@@ -12,7 +12,7 @@ const Login = () => {
         const user = { email: email.value, password: password.value };
 
         try {
-            const res = await axios.post('https://explorematebackend.onrender.com/login', user);
+            const res = await axios.post('http://localhost:3000/login', user);
             if (res.status === 200 && res.data) {
                 // console.log("User ID:", res.data._id);
                 localStorage.setItem("user", JSON.stringify(res.data));
@@ -60,6 +60,7 @@ const Login = () => {
 
                     <div className="mb-6">
                         <button
+
                             type="submit"
                             className="w-full py-2 px-4 bg-gray-800 hover:bg-gray-700 text-white rounded"
                         >

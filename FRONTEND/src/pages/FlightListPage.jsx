@@ -1,6 +1,5 @@
-
 const FlightListPage = (props) => {
-    const { flights } = props.location.state; // Receive flight data from props
+    const flights = props?.location?.state?.flights || [];// Receive flight data from props
     console.log("flights:", flights);
 
     const FlightCard = ({ flight }) => {

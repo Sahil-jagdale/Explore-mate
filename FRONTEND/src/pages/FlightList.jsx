@@ -1,4 +1,3 @@
-
 const FlightList = ({ flights }) => {
     const FlightCard = ({ flight }) => {
         const { arrivalAirport, arrivalTime, departureAirport, departureTime, duration, price } = flight;

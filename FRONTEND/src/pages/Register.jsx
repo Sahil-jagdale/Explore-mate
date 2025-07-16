@@ -30,7 +30,7 @@ const Register = () => {
         };
 
         try {
-            const res = await axios.post("https://explorematebackend.onrender.com/signup", user);
+            const res = await axios.post("http://localhost:3000/signup", user);
             if (res.status === 201) {
                 toast.success("User created successfully");
                 setTimeout(() => {
