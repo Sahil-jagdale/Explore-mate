@@ -1023,10 +1023,10 @@ const Airport = [
 
 app.use(express.json());
 app.use(cors({
+
     origin: "https://explore-mate.onrender.com",
     credentials: true,
   }));
-
 
 app.get("/", (req, res) => {
   res.send("Hello World");

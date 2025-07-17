@@ -6,7 +6,7 @@ from fn1 import recommend_attractions, recommend_hotels, recommend_restaurants
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://explore-mate-theta.vercel.app/"])
 
 # Define routes for different recommendations
 @app.route('/')

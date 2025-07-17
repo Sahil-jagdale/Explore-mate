@@ -12,7 +12,7 @@ const Login = () => {
         const user = { email: email.value, password: password.value };
 
         try {
-            const res = await axios.post('http://localhost:3000/login', user);
+            const res = await axios.post('https://explore-mate.onrender.com//login', user);
             if (res.status === 200 && res.data) {
                 // console.log("User ID:", res.data._id);
                 localStorage.setItem("user", JSON.stringify(res.data));

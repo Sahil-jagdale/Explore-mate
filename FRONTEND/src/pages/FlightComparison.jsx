@@ -163,7 +163,7 @@ const FlightComparison = () => {
             };
 
             const response = await axios.post(
-                `http://localhost:5001/flight-details`,
+                `https://explore-mate-python.onrender.com/flight-details`,
                 data,
                 {
                     headers: {
