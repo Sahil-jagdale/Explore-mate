@@ -71,7 +71,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
                         key={name}
                         size="small"
                         label={name}
-                        sx={{ m: 0.5 }}
+                        sx={{ m: '5px 5px 5px 0' }}
                     />
                 ))}
 

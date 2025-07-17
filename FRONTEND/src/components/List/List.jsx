@@ -5,12 +5,16 @@ import {
     Typography,
     InputLabel,
     MenuItem,
-    FormControl,
     Select,
-    Box,
 } from '@mui/material';
 
 import PlaceDetails from '../PlaceDetails/PlaceDetails.jsx';
+import {
+    Container,
+    LoaderBox,
+    StyledFormControl,
+    ListWrapper,
+} from './styles';
 
 const List = ({ places, type, setType, rating, setRating, childClicked, isLoading }) => {
     const [elRefs, setElRefs] = useState([]);
@@ -24,25 +28,18 @@ const List = ({ places, type, setType, rating, setRating, childClicked, isLoadin
     }, [places]);
 
     return (
-        <Box sx={{ mt: 10, mx: 3, px: 2 }}>
+        <Container>
             <Typography variant="h4" gutterBottom>
                 {type.charAt(0).toUpperCase() + type.slice(1)} around you.
             </Typography>
 
             {isLoading ? (
-                <Box
-                    sx={{
-                        height: '600px',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}
-                >
+                <LoaderBox>
                     <CircularProgress size="5rem" />
-                </Box>
+                </LoaderBox>
             ) : (
                 <>
-                    <FormControl variant="standard" sx={{ m: 1, minWidth: 120, mb: 4 }}>
+                    <StyledFormControl variant="standard">
                         <InputLabel id="type">Type</InputLabel>
                         <Select
                             id="type"
@@ -53,9 +50,9 @@ const List = ({ places, type, setType, rating, setRating, childClicked, isLoadin
                             <MenuItem value="hotels">Hotels</MenuItem>
                             <MenuItem value="attractions">Attractions</MenuItem>
                         </Select>
-                    </FormControl>
+                    </StyledFormControl>
 
-                    <FormControl variant="standard" sx={{ m: 1, minWidth: 120, mb: 4 }}>
+                    <StyledFormControl variant="standard">
                         <InputLabel id="rating">Rating</InputLabel>
                         <Select
                             id="rating"
@@ -67,16 +64,11 @@ const List = ({ places, type, setType, rating, setRating, childClicked, isLoadin
                             <MenuItem value="4">Above 4.0</MenuItem>
                             <MenuItem value="4.5">Above 4.5</MenuItem>
                         </Select>
-                    </FormControl>
+                    </StyledFormControl>
 
-                    <Grid container spacing={3} sx={{ height: '75vh', overflowY: 'auto' }}>
+                    <ListWrapper container spacing={3}>
                         {places?.map((place, i) => (
-                            <Grid
-                                item
-                                key={i}
-                                sx={{ width: '100%' }}
-                                ref={elRefs[i]}
-                            >
+                            <Grid item key={i} sx={{ width: '100%' }} ref={elRefs[i]}>
                                 <PlaceDetails
                                     selected={Number(childClicked) === i}
                                     refProp={elRefs[i]}
@@ -84,10 +76,10 @@ const List = ({ places, type, setType, rating, setRating, childClicked, isLoadin
                                 />
                             </Grid>
                         ))}
-                    </Grid>
+                    </ListWrapper>
                 </>
             )}
-        </Box>
+        </Container>
     );
 };
 
