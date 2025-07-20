@@ -163,7 +163,7 @@ const FlightComparison = () => {
             };
 
             const response = await axios.post(
-                `http://localhost:5000/flight-details`,
+                `https://serpapi-backend-xuns.onrender.com/flight-details`,
                 data,
                 {
                     headers: {
