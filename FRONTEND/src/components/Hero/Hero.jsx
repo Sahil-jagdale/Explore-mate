@@ -163,7 +163,7 @@ const Hero = () => {
             };
             console.log(data);
             const response = await axios.post(
-                `http://localhost:5001/flight-details`,
+                `https://serpapi-backend-xuns.onrender.com/flight-details`,
                 data,
                 {
                     headers: {
