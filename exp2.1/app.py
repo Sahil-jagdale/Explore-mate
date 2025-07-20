@@ -9,7 +9,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 
 
-CORS(app, origins=["http://localhost:5173"])
+CORS(app, origins=["https://explore-mate-three.vercel.app"])
 
 # Define routes for different recommendations
 @app.route('/')
