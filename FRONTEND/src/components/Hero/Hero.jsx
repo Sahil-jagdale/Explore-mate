@@ -163,7 +163,7 @@ const Hero = () => {
             };
             console.log(data);
             const response = await axios.post(
-                `https://exploremate-pythoncode.onrender.com/flight-details`,
+                `http://localhost:5001/flight-details`,
                 data,
                 {
                     headers: {

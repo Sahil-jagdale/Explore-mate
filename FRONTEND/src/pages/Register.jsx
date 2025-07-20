@@ -30,7 +30,7 @@ const Register = () => {
         };
 
         try {
-            const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/register`, user);
+            const res = await axios.post(`http://localhost:3000/register`, user);
             if (res.status === 201) {
                 toast.success("User created successfully");
                 setTimeout(() => {

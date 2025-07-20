@@ -4,12 +4,12 @@ from datetime import datetime
 import time
 from fn1 import recommend_attractions, recommend_hotels, recommend_restaurants
 from flask_cors import CORS
-import os
+
 
 app = Flask(__name__)
-frontend_url = os.environ.get("FRONTEND_URL")
 
-CORS(app, origins=[frontend_url])
+
+CORS(app, origins=["http://localhost:5173"])
 
 # Define routes for different recommendations
 @app.route('/')

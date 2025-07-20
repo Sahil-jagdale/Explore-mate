@@ -4,7 +4,7 @@ from flask_cors import CORS
 import requests
 
 app = Flask(__name__)
-CORS(app) 
+CORS(app, origins=["http://localhost:5173"])
 
 def get_flight_details(api_key, from_city, to_city, outbound_date, return_date=None, currency="INR"):
     api_url = "https://serpapi.com/search"
@@ -155,4 +155,4 @@ def get_flight_prices_route():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    app.run(debug=True,port=5001)

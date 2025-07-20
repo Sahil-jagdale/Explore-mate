@@ -163,7 +163,7 @@ const FlightComparison = () => {
             };
 
             const response = await axios.post(
-                `${import.meta.env.PYTHON_URL}/flight-details`,
+                `http://localhost:5000/flight-details`,
                 data,
                 {
                     headers: {
