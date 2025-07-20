@@ -30,7 +30,7 @@ const Register = () => {
         };
 
         try {
-            const res = await axios.post(`http://localhost:3000/register`, user);
+            const res = await axios.post(`https://node-backend-zun3.onrender.com/register`, user);
             if (res.status === 201) {
                 toast.success("User created successfully");
                 setTimeout(() => {
