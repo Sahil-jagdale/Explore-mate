@@ -1,6 +1,6 @@
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext, Link } from "react-router-dom";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -68,7 +68,10 @@ const Login = () => {
                         </button>
                     </div>
                     <p className="text-sm text-white text-center">
-                        Don't have an account? <a href="/register" className="text-blue-500 hover:text-blue-700">Register</a>
+                        Don't have an account?{" "}
+                        <Link to="/register" className="text-blue-500 hover:text-blue-700">
+                            Register
+                        </Link>
                     </p>
                 </form>
             </div>
