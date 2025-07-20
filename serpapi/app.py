@@ -4,7 +4,7 @@ from flask_cors import CORS
 import requests
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:5173"])
+CORS(app, origins=["https://explore-mate-three.vercel.app"])
 
 def get_flight_details(api_key, from_city, to_city, outbound_date, return_date=None, currency="INR"):
     api_url = "https://serpapi.com/search"
