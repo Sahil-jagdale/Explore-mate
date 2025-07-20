@@ -1024,7 +1024,7 @@ const Airport = [
 app.use(express.json());
 app.use(cors({
 
-    origin: "http://localhost:5173",
+    origin: "https://explore-mate-three.vercel.app",
     credentials: true,
   }));
 
@@ -1131,7 +1131,7 @@ const server = app.listen(PORT, () => {
 const io = new Server(server, {
   secure: true,
   cors: {
-    origin: "http://localhost:5173",
+    origin: "https://explore-mate-three.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
   },
