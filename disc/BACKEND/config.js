@@ -1,3 +1,0 @@
-export default {
-    MONGO_URL: "mongodb+srv://sahiljagdale1073:qwertyuiop@cluster0.2wg4soq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/",
-  };

@@ -4,9 +4,12 @@ from datetime import datetime
 import time
 from fn1 import recommend_attractions, recommend_hotels, recommend_restaurants
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
-CORS(app, origins=["https://explore-mate-theta.vercel.app/"])
+frontend_url = os.environ.get("FRONTEND_URL")
+
+CORS(app, origins=[frontend_url])
 
 # Define routes for different recommendations
 @app.route('/')

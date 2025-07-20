@@ -163,7 +163,7 @@ const FlightComparison = () => {
             };
 
             const response = await axios.post(
-                `https://explore-mate-python.onrender.com/flight-details`,
+                `${import.meta.env.PYTHON_URL}/flight-details`,
                 data,
                 {
                     headers: {

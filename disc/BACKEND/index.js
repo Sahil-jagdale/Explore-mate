@@ -1024,7 +1024,7 @@ const Airport = [
 app.use(express.json());
 app.use(cors({
 
-    origin: "https://explore-mate.onrender.com",
+    origin: process.env.FRONTEND_URL,
     credentials: true,
   }));
 
@@ -1037,7 +1037,7 @@ app.get('/tours', (req, res) => {
 });
 
 // create a new user
-app.post("/signup", async (req, res) => {
+app.post("/register", async (req, res) => {
   const { name, password, email, profileImage } = req.body;
   console.log("req.body", req.body);
   try {
@@ -1048,11 +1048,12 @@ app.post("/signup", async (req, res) => {
 
       // Hash the password
       const hashedPassword = await bcrypt.hash(password, 10);
-
+      if (!password) return res.status(400).json({ message: "Password is required" });
       // Create the new user with the hashed password
       const newUser = await User.create({ name, password: hashedPassword, email, profileImage });
       return res.status(201).json({ message: "User created successfully" });
   } catch (error) {
+    console.error("Registration Error:", error);
       res.status(500).json({ message: "Server Error" });
   }
 });

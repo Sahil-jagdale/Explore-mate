@@ -30,7 +30,7 @@ const Register = () => {
         };
 
         try {
-            const res = await axios.post("https://explore-mate.onrender.com//signup", user);
+            const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/register`, user);
             if (res.status === 201) {
                 toast.success("User created successfully");
                 setTimeout(() => {
